@@ -5,6 +5,8 @@
 <p>Web application created with Flask to interact with the <a href="https://ergoplatform.org">Ergo blockchain</a> from the browser. 
 <br>Undoubtedly, the <a href="https://github.com/mgpai22/ergpy">ergpy repository</a> has been fundamental for the creation of <strong>schedulERGweb.</strong></p>
 
+<img src="https://ergotokens.org/schedulERGweb.png" alt="schedulERGweb" />
+
 <p>Much of the code has been recycled from <a href="https://github.com/ladopixel/schedulERG">schedulERG</a> (similar terminal application)</p>
 
 <h3>Important</h3>
