@@ -6,3 +6,7 @@
 <br>Undoubtedly, the <a href="https://github.com/mgpai22/ergpy">ergpy repository</a> has been fundamental for the creation of <strong>schedulERGweb.</strong></p>
 
 <p>Much of the code has been recycled from <a href="https://github.com/ladopixel/schedulERG">schedulERG</a> (similar terminal application)</p>
+
+<h3>Important</h3>
+<p>This application is configured to function correctly in a development environment, not a production environment.</p>
+<p>Remember that this is a non-audit application, although I want you to have no problems with your ERGs, I recommend that the seed phrase you enter (it will never be stored) corresponds to a wallet that is not your main wallet.</p>
