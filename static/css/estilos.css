@@ -1,0 +1,25 @@
+body {
+    background-color: #e0e0e0;
+    background-position: right top;
+    padding: 25px;
+}
+
+@font-face {
+    font-family: 'zxspectrum';
+    src: url('zxspectrum.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2, h3 {
+    font-family: 'zxspectrum';
+}
+
+.logo {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.ZXfont{
+    font-family: 'zxspectrum';
+}

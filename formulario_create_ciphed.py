@@ -1,0 +1,11 @@
+from tokenize import String
+from wtforms import Form
+from wtforms import StringField
+from wtforms import PasswordField
+
+class CreateForm(Form):
+    name = StringField('name')
+    description = StringField('description')
+    amount = StringField('amount')
+    decimals = StringField('decimals')
+    password = PasswordField('password')

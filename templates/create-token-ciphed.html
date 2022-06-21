@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <h2>Create token ciphed</h2>
+    
+    {% from "_macro.html" import renderizo_formulario %}
+    
+    <form name="createToken" id="createForm" method="POST">
+        <p>{{ renderizo_formulario(form.name, class="form-control", placeholder="enter name") }}</p>
+        <p>{{ renderizo_formulario(form.description, class="form-control", maxlength="50", placeholder="enter description") }}</p>
+        <p>{{ renderizo_formulario(form.amount, class="form-control", placeholder="enter amount") }}</p>
+        <p>{{ renderizo_formulario(form.decimals, class="form-control", placeholder="enter decimals") }}</p>
+        <p>{{ renderizo_formulario(form.password, class="form-control", placeholder="enter password to cipher") }}</p>
+        <div class="form-group mt-3">
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i></button></a>
+            <button type="submit" class="btn btn-success">Create <i class="bi bi-file-earmark-plus-fill"></i><i class="bi bi-asterisk"></i></button>
+        </div>
+    </form>
+
+    <hr class="text-black">
+    <hr class="text-dark">
+    <hr class="text-secondary"> 
+
+    <ul class="list-group">
+        <li class="list-group-item"><i class="bi bi-file-earmark-binary-fill"></i> idTx → </strong> {{ idTx }}</li>
+        <li class="list-group-item"><i class="bi bi-coin"></i> Name → </strong> {{ name }}</li>
+        <li class="list-group-item"><i class="bi bi-body-text"></i> Description → </strong> {{ description }}</li>
+        <li class="list-group-item"><i class="bi bi-asterisk"></i> Description ciphed → </strong> {{ description_ciphed }}</li>
+        <li class="list-group-item"><i class="bi bi-calculator-fill"></i> Amount → </strong> {{ amount }}</li>
+        <li class="list-group-item"><i class="bi bi-rulers"></i> Decimals → </strong> {{ decimals }}</li>
+    </ul>
+
+{% endblock %}
+    

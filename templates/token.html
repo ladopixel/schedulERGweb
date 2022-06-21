@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <h2>Token</h2>
+    <ul class="list-group">
+        <li class="list-group-item">{{ name_token }}</li>
+        <li class="list-group-item">{{ token_id }}</li>
+        <li class="list-group-item">{{ description_token }}</li>
+    </ul>
+
+    {% from "_macro.html" import renderizo_formulario %}
+    <form name="displayDeciph" id="deciphForm" method="POST">
+        <p>{{ renderizo_formulario(form.password, class="form-control", placeholder="introduce password") }}</p>
+        <div class="form-group mt-3">
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i></button></a>
+            <button type="submit" class="btn btn-success">Deciph description <i class="bi bi-key-fill"></i></button>
+        </div>
+    </form>
+
+    <hr>
+    <ul class="list-group">
+        <li class="list-group-item">{{ name_token }}</li>
+        <li class="list-group-item bg-success text-white">{{ description_deciphed }}</li>
+    </ul>
+    
+{% endblock%}
+    

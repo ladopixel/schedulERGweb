@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- STATIC -->
+    <link type="text/javascript" href="{{ url_for('static', filename='js/functions.js') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <title>schedulERG</title>
+    </head>
+<body>
+    <a href="/"><img class="img-fluid logo" src="{{ url_for('static', filename='img/ergo.png') }}" alt="ErgoPlatform"></a>
+
+    {% block content %}
+    {% endblock %}
+
+    <hr>
+    <small class="ZXfont">♥ playing with<strong> <span class="text-info">Flask</span> + <span class="text-warning">Ergo Platform</span></strong> by LADOPIXΣL with <a href="https://github.com/mgpai22/ergpy">ergpy</a></small>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <h2>Wallets</h2>
+    
+    {% from "_macro.html" import renderizo_formulario %}
+    
+    <form name="displayWallet" id="createForm" method="POST">
+        <p>{{ renderizo_formulario(form.wallet_address, class="form-control", placeholder="introduce wallet") }}</p>
+        <div class="form-group mt-3">
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i></button></a>
+            <button type="submit" class="btn btn-success">Acept </button>
+        </div>
+    </form>
+
+    <hr class="text-black">
+    <hr class="text-dark">
+    <hr class="text-secondary">
+
+    <ul class="list-group">
+        <li class="list-group-item"><i class="bi bi-wallet-fill"></i> Wallet → </strong> {{ wallet_address }}</li>
+        <li class="list-group-item"><i class="bi bi-wallet-fill"></i> ERG → </strong> {{ total_ergs }}</li>
+        <li class="list-group-item"><i class="bi bi-wallet-fill"></i> Tokens → </strong> {{ total_tokens }}</li>
+    </ul>
+
+    <hr>
+
+    <ul class="list-group">
+        <li class="list-group-item"> Tokens list ↓</li>
+    </ul>
+    <ul class="list-group mt-2">
+        {% for single_id in array_data_tokens %}
+            <li class="list-group-item">
+                <a href="token/{{ single_id['tokenId'] }}">{{ single_id['name'] }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+{% endblock%}
+    
