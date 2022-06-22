@@ -14,15 +14,32 @@
         <p>{{ renderizo_formulario(form.password, class="form-control", placeholder="introduce password") }}</p>
         <div class="form-group mt-3">
             <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i></button></a>
-            <button type="submit" class="btn btn-success">Deciph description <i class="bi bi-key-fill"></i></button>
+            <button type="submit" class="btn btn-info"><i class="bi bi-key-fill"></i> Deciph description + IMG </button>
         </div>
     </form>
 
     <hr>
-    <ul class="list-group">
+    <ul class="list-group mb-2">
+        <li class="list-group-item bg-secondary text-white">Titulo ciphed</li>
         <li class="list-group-item">{{ name_token }}</li>
-        <li class="list-group-item bg-success text-white">{{ description_deciphed }}</li>
     </ul>
+    <ul class="list-group mb-2">
+        <li class="list-group-item bg-secondary text-white">Desc deciph</li>
+        <li class="list-group-item text-break">{{ description_deciphed }}</li>
+    </ul>
+    <ul class="list-group mb-2">
+        <li class="list-group-item bg-secondary text-white ">URL ciphed</li>
+        <li class="list-group-item text-break">{{ url_token_ciphed }}</li>
+    </ul>
+    <ul class="list-group mb-2">
+        <li class="list-group-item bg-secondary text-white">URL deciphed</li>
+        <li class="list-group-item text-break"><a href="{{ url_token_deciphed }}">{{ url_token_deciphed }}</a></li>
+    </ul>
+    <ul class="list-group mb-2">
+        <li class="list-group-item bg-secondary text-white">Image with URL deciphed </li>
+        <li class="list-group-item "><img src="{{ url_token_deciphed }}" class="img-fluid" ></li>
+    </ul>
+    <ul>
     
 {% endblock%}
     

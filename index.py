@@ -37,6 +37,14 @@ def to_utf8_string(hex):
             aux = ''
     return valor_utf8
 
+def resolveIpfs(url):
+    ipfsPrefix = 'ipfs://'
+    if url[0:7:1] != ipfsPrefix:
+        return url
+    else:
+        print(url.replace(ipfsPrefix, 'https://cloudflare-ipfs.com/ipfs/'))
+        return url.replace(ipfsPrefix, 'https://cloudflare-ipfs.com/ipfs/')
+
 # INDEX
 @app.route('/')
 def index():
@@ -145,16 +153,27 @@ def token(tokenId):
     password = deciphed_form.password.data
     description_deciphed = ''
     message_error = ''
+    url_token = ''
+    url_token_deciphed = ''
     data_token = requests.get('https://api.ergoplatform.com/api/v0/assets/' + tokenId + '/issuingBox')
     data_token = data_token.json()
     name_token = str(data_token[0]['assets'][0]['name'])
     description_token = to_utf8_string(data_token[0]['additionalRegisters']['R5'])[2:]
+
     if cryptocode.decrypt(description_token, password):
         description_deciphed = cryptocode.decrypt(description_token, password)
     else:
-        message_error = 'error password'
+        message_error = 'error deciphed password'
 
-    return render_template('token.html', form = deciphed_form, token_id = token_id, password = password, name_token = name_token, description_token = description_token, description_deciphed = description_deciphed, message_error = message_error)
+    if data_token[0]['additionalRegisters']['R9']:
+        url_token_ciphed = to_utf8_string(data_token[0]['additionalRegisters']['R9'])[2:]
+
+    if cryptocode.decrypt(url_token_ciphed, password):
+        url_token_deciphed = resolveIpfs(cryptocode.decrypt(url_token_ciphed, password))
+    else:
+        message_error = 'error deciphed url'
+
+    return render_template('token.html', form = deciphed_form, token_id = token_id, password = password, name_token = name_token, description_token = description_token, description_deciphed = description_deciphed, url_token_ciphed=url_token_ciphed, url_token_deciphed=url_token_deciphed, message_error = message_error)
 
 # ADIOS :)
 @app.route('/adios')
