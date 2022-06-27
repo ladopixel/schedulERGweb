@@ -3,18 +3,21 @@
 {% block content %}
 
     <h2>Create token ciphed</h2>
-    
+    <h4>Instructions</h4>
+    <ul class="small">
+        <li>....</li>
+    </ul>
     {% from "_macro.html" import renderizo_formulario %}
     
     <form name="createToken" id="createForm" method="POST">
         <p>{{ renderizo_formulario(form.name, class="form-control", placeholder="enter name") }}</p>
-        <p>{{ renderizo_formulario(form.description, class="form-control", maxlength="50", placeholder="enter description") }}</p>
+        <p>{{ renderizo_formulario(form.description, class="form-control", maxlength="50", placeholder="enter description to encrypt") }}</p>
         <p>{{ renderizo_formulario(form.amount, class="form-control", placeholder="enter amount") }}</p>
         <p>{{ renderizo_formulario(form.decimals, class="form-control", placeholder="enter decimals") }}</p>
         <p>{{ renderizo_formulario(form.password, class="form-control", placeholder="enter password to cipher") }}</p>
         <div class="form-group mt-3">
-            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i></button></a>
-            <button type="submit" class="btn btn-success">Create <i class="bi bi-file-earmark-plus-fill"></i><i class="bi bi-asterisk"></i></button>
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i> Menu</button></a>
+            <button type="submit" class="btn btn-info text-white">Create <i class="bi bi-file-earmark-plus-fill"></i></button>
         </div>
     </form>
 

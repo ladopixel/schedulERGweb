@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <h2>Ciphed Image</h2>
+    <h4>Instructions</h4>
+    <ul class="small">
+        <li>Enter image local path to cipher.</li>
+        <li>Enter password to cipher.</li>
+        <li>Push Cipher button.</li>
+        <li>The ciphed image will be stored in /static/img/image_ciphed.png.</li>
+        <li>Upload manual ciphed image to Pinata o service IPFS local.</li>
+        <li>Copy the URL with the CID of your image (example: ipfs://Qma4b...3bwn3LrwHNe).</li>
+    </ul>
+    <h3><i class="bi bi-arrow-bar-down"></i></h3>
+    {% from "_macro.html" import renderizo_formulario %}
+    
+    <form name="createToken" id="createForm" method="POST">
+        <p>{{ renderizo_formulario(form.ruta_image, class="form-control", placeholder="enter image local path to cipher") }}</p>
+        <p>{{ renderizo_formulario(form.password, class="form-control", placeholder="enter password to cipher (16 characters)") }}</p>
+        
+        <div class="form-group mt-3">
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i> Menu </button></a>
+            <button type="submit" class="btn btn-info text-white"> <i class="bi bi-card-image"></i> Cipher</button>
+        </div>
+    </form>
+
+    <hr class="text-black">
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <h3>INFO</h3>
+        </li>
+        <li class="list-group-item">
+            {{ mensaje_error }}
+        </li>
+    </ul>
+    
+    <ul class="list-group mt-2">
+        <li class="list-group-item">
+            <h3>IMAGE CIPHED</h3>
+        </li>
+        <li class="list-group-item">
+            the ciphed image will be stored in {{ url_for ('static', filename = 'img/image_ciphed.png') }}
+        </li>
+        <li class="list-group-item">
+            <img width="100" src="{{url_for ('static', filename = './img/image_ciphed.png')}}" alt="... "/>
+        </li>
+    </ul>
+
+{% endblock %}
+    

@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <h2>Create NFT ciphed</h2>
+    <h4>Instructions</h4>
+    <ul class="small">
+        <li><a href="/image-ciphed">Cipher image</a></li>
+        <li>enter Name</li>
+        <li>enter Description</li>
+        <li>enter password to ciph</li>
+        <li>enter image IPFS URL</li>
+        <li><strong>Push the button create</strong> to mint NFT</li>
+    </ul>
+    <h3><i class="bi bi-arrow-bar-down"></i></h3>
+    {% from "_macro.html" import renderizo_formulario %}
+    
+    <form name="createToken" id="createForm" method="POST">
+        <p>{{ renderizo_formulario(form.name, class="form-control", placeholder="enter NFT name") }}</p>
+        <p>{{ renderizo_formulario(form.description, class="form-control", maxlength="50", placeholder="enter NFT description") }}</p>
+        <p>{{ renderizo_formulario(form.ruta_image, class="form-control", readonly="true", value="./static/img/image_ciphed.png") }}</p>
+        <p>{{ renderizo_formulario(form.ruta_ipfs, class="form-control", placeholder="enter ipfs://bafybei...36kpybfy") }}</p>
+        <div class="form-group mt-3">
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i> Menu</button></a>
+            <button type="submit" class="btn btn-info text-white">Create NFT <i class="bi bi-file-earmark-plus-fill"></i></button>
+        </div>
+    </form>
+
+    <hr class="text-black">
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <h3>idTx</h3>
+        </li>
+        <li class="list-group-item">
+            {{ idTx }}
+        </li>
+    </ul>
+    <ul class="list-group mt-2">
+        <li class="list-group-item">
+            <h3>Name</h3>
+        </li>
+        <li class="list-group-item">
+            {{ name }}
+        </li>
+    </ul>
+    <ul class="list-group mt-2">
+        <li class="list-group-item">
+            <h3>Description</h3>
+        </li>
+        <li class="list-group-item">
+            {{ description }}
+        </li>
+    </ul>
+    <ul class="list-group mt-2">
+        <li class="list-group-item">
+            <h3>Image ciphed</h3>
+        </li>
+        <li class="list-group-item">
+            <img width="100" src="{{url_for ('static', filename = './img/image_ciphed.png')}}" alt="{{ name_token }}"/>
+        </li>
+    </ul>
+
+{% endblock %}
+    

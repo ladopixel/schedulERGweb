@@ -15,6 +15,8 @@
   <li>✅ 2 Send ERG.</li>
   <li>✅ 3 Create token.</li>
   <li>✅ 4 Create token ciphed.</li>
+  <li>✅ 5 Encrypt image with key.</li>
+  <li>✅ 6 Create NFT with image ciphed.</li>
 </ul>
 
 <h3>Important</h3>

@@ -3,9 +3,21 @@
 {% block content %}
 
     <h3 >Menu</h3>
+    <a href="/cafe" class="btn btn-secondary"><i class="bi bi-cup-fill"></i></a>
     <a href="/wallets" class="btn btn-secondary"> Wallets</a>
     <a href="/send" class="btn btn-secondary">Send ERG</a>
     <a href="/create-token" class="btn btn-secondary">Create token</a>
     <a href="/create-token-ciphed" class="btn btn-secondary">Create token ciphed</a>
+    
+    <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Create NFT with ciphed image
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdown">
+            <span class="p-3 small text-secondary">Before creating an NFT you must cipher the image.</span>
+            <li><a class="dropdown-item" href="/image-ciphed">Encrypt image</a></li>
+            <li><a class="dropdown-item" href="/create-nft-ciphed">Create NFT ciphed</a></li>
+        </ul>
+    </div>
     
 {% endblock%}

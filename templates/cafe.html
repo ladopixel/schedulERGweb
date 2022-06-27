@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    
+    <h2>You can invite me to a coffee</h2>
+    
+    <hr class="text-black">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i> Menu </button></a>
+            <a href="https://explorer.ergoplatform.com/en/addresses/9ggm3WB6e2BMbbCD3C9PJcgm5wbvmvCUG7w5rgszbKVWrVr8fSE" class="btn btn-info text-white" target="_blank"><i class="bi bi-wallet-fill"></i> ERG address → 9ggm3WB6e2BMbbCD3C9PJcgm5wbvmvCUG7w5rgszbKVWrVr8fSE</strong> {{ wallet_address }}</a>
+        </li>        
+    </ul>
+    <li class="list-group-item">
+        <img width="300" src="{{url_for ('static', filename = './img/qr-erg.png')}}" alt="... "/>
+    </li>
+    
+{% endblock%}
+    

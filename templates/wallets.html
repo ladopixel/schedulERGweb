@@ -9,14 +9,12 @@
     <form name="displayWallet" id="createForm" method="POST">
         <p>{{ renderizo_formulario(form.wallet_address, class="form-control", placeholder="introduce wallet") }}</p>
         <div class="form-group mt-3">
-            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i></button></a>
-            <button type="submit" class="btn btn-success">Acept </button>
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i> Menu</button></a>
+            <button type="submit" class="btn btn-info text-white">Acept </button>
         </div>
     </form>
 
     <hr class="text-black">
-    <hr class="text-dark">
-    <hr class="text-secondary">
 
     <ul class="list-group">
         <li class="list-group-item"><i class="bi bi-wallet-fill"></i> Wallet → </strong> {{ wallet_address }}</li>
@@ -29,13 +27,17 @@
     <ul class="list-group">
         <li class="list-group-item"> Tokens list ↓</li>
     </ul>
-    <ul class="list-group mt-2">
+    
         {% for single_id in array_data_tokens %}
-            <li class="list-group-item">
-                <a href="token/{{ single_id['tokenId'] }}">{{ single_id['name'] }}</a>
+        <ul class="list-group mt-2">
+            <li class="list-group-item h3">
+                {{ single_id['name'] }}
+                <br>
+                <a href="token/{{ single_id['tokenId'] }}" class="btn btn-sm btn-secondary">Deciph Description</a>
+                <a href="nftciphed/{{ single_id['tokenId'] }}" class="btn btn-sm btn-secondary">Deciph IMG</a>
             </li>
+        </ul>
         {% endfor %}
-    </ul>
     
 {% endblock%}
     

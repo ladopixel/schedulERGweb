@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <h2>NFT ciphed</h2>
+    <ul class="list-group">
+        <li class="list-group-item">{{ token_id }}</li>
+        <li class="list-group-item">{{ name_token }}</li>
+    </ul>
+    
+    {% from "_macro.html" import renderizo_formulario %}
+    <form name="displayDeciph" id="deciphForm" method="POST">
+        <p>{{ renderizo_formulario(form.password, class="form-control", placeholder="introduce password") }}</p>
+        <div class="form-group mt-3">
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i> Menu</button></a>
+            <button type="submit" class="btn btn-info text-white">Deciph IMG <i class="bi bi-key-fill"></i></button>
+        </div>
+    </form>
+
+    <hr>
+    <ul class="list-group mb-2">
+        <li class="list-group-item">
+            <h3>Name</h3>
+        </li>
+        <li class="list-group-item">{{ name_token }}</li>
+    </ul> 
+    <ul class="list-group mb-2">
+        <li class="list-group-item">
+            <h3>Description</h3>
+        </li>
+        <li class="list-group-item">{{ description_token }}</li>
+    </ul> 
+    <ul class="list-group mb-2">
+        <li class="list-group-item">
+            <h3>URL IMG</h3>
+        </li>
+        <li class="list-group-item">
+            <a href="{{ url_token }}" target="_blank">{{ url_token }}</a>
+        </li>
+    </ul> 
+    <ul class="list-group mb-2">
+        <li class="list-group-item">
+            <h3>IMG ciphed</h3>
+        </li>
+        <li class="list-group-item"><img width="200" src="{{ url_token }}" alt="{{ name_token }}" class="mt-2"/></li>
+    </ul> 
+
+    
+    <ul class="list-group mb-2">
+        <li class="list-group-item">
+            <h3>IMG deciphed</h3>
+        </li>
+        <li class="list-group-item">
+            <span>{{ url_name }}</span>
+            {% if ruta_local == None or ruta_local ==  '' %}
+                <span>...</span>    
+            {% else %}
+                <img width="200" src="{{url_for ('static', filename = './img/nueva_imagen.png')}}" alt="{{ name_token }}"/>
+            {% endif %}
+        </li>
+    </ul> 
+    
+{% endblock%}
+    

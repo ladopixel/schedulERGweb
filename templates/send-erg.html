@@ -10,14 +10,12 @@
             {{ renderizo_formulario(form.wallet_address, class="form-control", placeholder="introduce wallet") }}   
             {{ renderizo_formulario(form.amount, class="form-control", placeholder="introduce amount") }}
             <div class="form-group mt-3">
-            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i></button></a>
-            <button type="submit" class="btn btn-success">Send <i class="bi bi-send-check-fill"></i></button>
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i> Menu</button></a>
+            <button type="submit" class="btn btn-info text-white">Send <i class="bi bi-send-check-fill"></i></button>
             </div>
     </form>
     
     <hr class="text-black">
-    <hr class="text-dark">
-    <hr class="text-secondary">
 
     <ul class="list-group">
         <li class="list-group-item"><i class="bi bi-file-earmark-binary-fill"></i> idTx → </strong> {{ idTx }}</li>

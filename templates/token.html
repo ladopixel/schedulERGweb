@@ -4,39 +4,49 @@
 
     <h2>Token</h2>
     <ul class="list-group">
-        <li class="list-group-item">{{ name_token }}</li>
-        <li class="list-group-item">{{ token_id }}</li>
-        <li class="list-group-item">{{ description_token }}</li>
+        <li class="list-group-item">name: {{ name_token }}</li>
+        <li class="list-group-item">id: {{ token_id }}</li>
+        <li class="list-group-item">desc: {{ description_token }}</li>
     </ul>
 
     {% from "_macro.html" import renderizo_formulario %}
     <form name="displayDeciph" id="deciphForm" method="POST">
         <p>{{ renderizo_formulario(form.password, class="form-control", placeholder="introduce password") }}</p>
         <div class="form-group mt-3">
-            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i></button></a>
-            <button type="submit" class="btn btn-info"><i class="bi bi-key-fill"></i> Deciph description + IMG </button>
+            <a href="/"><button type="button" class="btn btn-secondary"><i class="bi bi-backspace-fill"></i> Menu</button></a>
+            <button type="submit" class="btn btn-info text-white"><i class="bi bi-key-fill"></i> Deciph description + IMG </button>
         </div>
     </form>
 
     <hr>
     <ul class="list-group mb-2">
-        <li class="list-group-item bg-secondary text-white">Titulo ciphed</li>
+        <li class="list-group-item">
+            <h3>Titulo ciphed</h3>
+        </li>
         <li class="list-group-item">{{ name_token }}</li>
     </ul>
     <ul class="list-group mb-2">
-        <li class="list-group-item bg-secondary text-white">Desc deciph</li>
+        <li class="list-group-item">
+            <h3>Desc deciph</h3>
+        </li>
         <li class="list-group-item text-break">{{ description_deciphed }}</li>
     </ul>
     <ul class="list-group mb-2">
-        <li class="list-group-item bg-secondary text-white ">URL ciphed</li>
+        <li class="list-group-item">
+            <h3>URL ciphed</h3>
+        </li>
         <li class="list-group-item text-break">{{ url_token_ciphed }}</li>
     </ul>
     <ul class="list-group mb-2">
-        <li class="list-group-item bg-secondary text-white">URL deciphed</li>
+        <li class="list-group-item">
+            <h3>URL deciphed</h3>
+        </li>
         <li class="list-group-item text-break"><a href="{{ url_token_deciphed }}">{{ url_token_deciphed }}</a></li>
     </ul>
     <ul class="list-group mb-2">
-        <li class="list-group-item bg-secondary text-white">Image with URL deciphed </li>
+        <li class="list-group-item ">
+            <h3>Image with URL deciphed</h3>
+        </li>
         <li class="list-group-item "><img src="{{ url_token_deciphed }}" class="img-fluid" ></li>
     </ul>
     <ul>
