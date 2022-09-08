@@ -35,7 +35,6 @@ private = dotenv_values('.env')
 wallet_mnemonic = private['PASSWORD']
 
 
-
 # SEND ERG
 def send_erg(receiver, cantidad):
     cantidad_float = float(cantidad)
